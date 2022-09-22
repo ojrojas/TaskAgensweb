@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="add()">
+    <mat-card>
+        <mat-card-title>{{type}} Activity Task</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Activity name</mat-label>
+                    <input matInput formControlName="nameActivity" placeholder="Placeholder">
+                    <mat-error *ngIf="form.get('nameActivity')?.invalid">Field activity name is <strong>requerid</strong></mat-error>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-divider inset></mat-divider>
+            <mat-card-actions>
+                <button mat-button color="primary" type="submit">{{type}}</button>
+                <button mat-button type="reset" (click)="cancel()">Cancel</button>
+            </mat-card-actions>
+            <mat-card-footer *ngIf="loading">
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </mat-card-footer>
+        </mat-card>
+    </form>

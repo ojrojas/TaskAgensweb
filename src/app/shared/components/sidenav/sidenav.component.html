@@ -1,0 +1,23 @@
+<mat-drawer-container>
+    <mat-drawer #drawer mode="side" class="sidenav-drawer">
+        <div class="sidenav">
+            <span class="project-name"><strong>Task Agents</strong></span>
+            <a [routerLink]="['/home']" class="icon-major-village"><span class="material-icons">10k</span>Home</a>
+            <a [routerLink]="['/taskapplication']" style="vertical-align: middle;"><span class="material-icons">task</span>Task Application</a>
+            <a [routerLink]="['/settings']" style="vertical-align: middle;"><span class="material-icons">settings</span>Settings</a>
+        </div>
+    </mat-drawer>
+    <div id="main-content" class="main" >
+        <div class="header-nav">
+            <span  class="material-icons pointer-menu" (click)="drawer.toggle()">menu</span>
+            <div class="header-nav__user"> 
+                <span><strong> {{nameUser}} </strong></span>
+                <button class="header-nav__user-avatar" [matMenuTriggerFor]="menu" mat-button><strong>{{Initials}}</strong></button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="logOut()">Logout</button>
+                  </mat-menu>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>

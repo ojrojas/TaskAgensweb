@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="listActivityTasks" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nameActivity}} </td>
+    </ng-container>
+  
+    <!-- CreatedOn Column -->
+    <ng-container matColumnDef="createdOn">
+      <th mat-header-cell *matHeaderCellDef> Creado En </th>
+      <td mat-cell *matCellDef="let element"> {{element.createdOn | date}} </td>
+    </ng-container>
+  
+    <!-- Actions Buttons -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element" class="list-item-actions">
+        <button mat-icon-button color="primary" aria-label="button update icon" (click)="updateActivityTask(element)">
+          <mat-icon>update</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="button detail icon" (click)="detailActivityTask(element)">
+          <mat-icon>info</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" aria-label="button delete icon" (click)="deleteActivityTask(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="namesColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: namesColumns;"></tr>
+  </table>

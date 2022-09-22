@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card class="form-login">
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <mat-form-field appearance="outline" class="form-control">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="userName" required />
+                    <mat-error *ngIf="form.get('userName')?.invalid">Field username is <strong>requerid</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-control">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password" required />
+                    <mat-error *ngIf="form.get('password')?.invalid">Field password is <strong>requerid</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-card-actions>
+                    <div class="form-control-button">
+                        <button mat-button type="submit">Sign in</button>
+                    </div>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

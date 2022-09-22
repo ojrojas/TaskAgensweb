@@ -1,0 +1,18 @@
+.main-settings {
+    padding: 10px;
+    height: 100vh;
+}
+
+.content-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-cards-settings{
+    margin: 5px;
+}
+
+.card-buttons_navs {
+    display: flex;
+    justify-content:space-around;
+}

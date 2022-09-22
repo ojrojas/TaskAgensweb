@@ -1,0 +1,65 @@
+<form [formGroup]="form" (ngSubmit)="add()">
+    <mat-card>
+        <mat-card-title>{{type}} Task Application</mat-card-title>
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Task Name</mat-label>
+                <input matInput formControlName="taskName" placeholder="Placeholder">
+                <mat-error *ngIf="form.get('taskName')?.invalid">Field task name is <strong>requerid</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Time Task</mat-label>
+                <input matInput formControlName="timeTask" type="time" placeholder="Placeholder">
+                <mat-error *ngIf="form.get('timeTask')?.invalid">Field time task name is <strong>requerid</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Activity Task</mat-label>
+                <mat-select formControlName="activityTaskId" placeholder="Placeholder">
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.get('activityTaskId')?.invalid">Field type task name is <strong>requerid</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Type Task</mat-label>
+                <mat-select formControlName="typeTaskId" placeholder="Placeholder">
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.get('typeTaskId')?.invalid">Field type task name is <strong>requerid</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Agent</mat-label>
+                <mat-select formControlName="agentId" placeholder="Placeholder">
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.get('agentId')?.invalid">Field type task name is <strong>requerid</strong>
+                </mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-content>
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Comments</mat-label>
+                <textarea matInput matInput formControlName="comments" placeholder="Placeholder"></textarea>
+                <mat-error *ngIf="form.get('comments')?.invalid">Field type task name is <strong>requerid</strong>
+                </mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" type="submit">{{type}}</button>
+            <button mat-button type="reset" (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+        <mat-card-footer *ngIf="loading">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+    </mat-card>
+</form>

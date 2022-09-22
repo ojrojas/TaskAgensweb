@@ -1,0 +1,19 @@
+<app-header-page [headerModel]="headerSettings">
+</app-header-page>
+<div class="main-settings">
+  <div class="content-cards">
+    <mat-card class="content-cards-settings" *ngFor="let cardnew of buttonsScreen">
+      <mat-card-header>
+        <h1>{{cardnew.section}}</h1>
+      </mat-card-header>
+      <mat-card-content class="card-buttons_navs">
+        <button mat-raised-button mat-button *ngFor="let button of cardnew.configureButtons" (click)="button.action()">
+          <mat-icon aria-hidden="false">
+            {{button.icon}}
+          </mat-icon>
+          {{button.description}}
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
