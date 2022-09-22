@@ -23,7 +23,7 @@ export class LayoutComponent implements OnInit {
     private authService: AuthService,
     private router: Router) {
     // this.authService.getUserApp().subscribe(user => this.userLoginNanme = this.getNameUserLogin(user)).unsubscribe();
-    this.router.navigate(['/taskapplication']);
+    this.router.navigate(['/home']);
   }
 
   ngOnInit(): void {

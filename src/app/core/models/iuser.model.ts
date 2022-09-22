@@ -1,14 +1,12 @@
 import { IBaseEntity } from "./ibaseentity";
+import { ITypeUser } from "./itypeuser.model";
 
 export interface IUser extends IBaseEntity{
     firstName:string;
-    middlename:string | null;
+    middlename:string | undefined;
     lastName:string;
-    surName:string | null;
+    surName:string | undefined;
     identification:string;
-    typeIdentification:string;
-    age:number;
-    birthDate:Date;
-    typeUser:string;
-    email:string;
+    typeUser?:ITypeUser;
+    typeUserId: string | undefined;
 }
